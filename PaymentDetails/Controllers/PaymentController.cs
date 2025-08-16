@@ -20,7 +20,7 @@ namespace PaymentDetails.Controllers
             _context = context;
         }
 
-        // GET: api/Payment
+        // GET: api/Payment/123
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PaymentDetails.Models.PaymentDetails>>> GetPaymentDetails()
         {
