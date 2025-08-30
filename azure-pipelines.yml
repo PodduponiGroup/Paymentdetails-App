@@ -6,7 +6,7 @@ trigger:
 - master # 👈 replace with your branch name (e.g., master/develop)
 
 pool:
-  vmImage: 'windows-latest'
+  name: 'SelfHostedPool'
 
 variables:
   buildConfiguration: 'Release'
