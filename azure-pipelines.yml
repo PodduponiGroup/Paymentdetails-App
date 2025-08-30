@@ -23,7 +23,7 @@ stages:
     - task: UseDotNet@2
       inputs:
         packageType: 'sdk'
-        version: '9.0'  # Change to your TargetFramework version
+        version: '9.0.302'  # Change to your TargetFramework version
         installationPath: $(Agent.ToolsDirectory)/dotnet
 
     - task: DotNetCoreCLI@2
