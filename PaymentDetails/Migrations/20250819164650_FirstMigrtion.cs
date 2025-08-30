@@ -5,24 +5,27 @@
 namespace PaymentDetails.Migrations
 {
     /// <inheritdoc />
-    public partial class FIRSTMYGRATION : Migration
+    public partial class FirstMigrtion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            
+
             migrationBuilder.CreateTable(
-                name: "PaymentDetails",
+                name: "User",
                 columns: table => new
                 {
-                    PaymentDetailsId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CardHolderName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CardExpiryDate = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MobileNumber = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PaymentDetails", x => x.PaymentDetailsId);
+                    table.PrimaryKey("PK_User", x => x.UserId);
                 });
         }
 
@@ -31,6 +34,9 @@ namespace PaymentDetails.Migrations
         {
             migrationBuilder.DropTable(
                 name: "PaymentDetails");
+
+            migrationBuilder.DropTable(
+                name: "User");
         }
     }
 }
