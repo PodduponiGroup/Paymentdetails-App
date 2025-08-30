@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,13 +10,14 @@ using PaymentDetails.Models;
 
 namespace PaymentDetails.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PaymentController : ControllerBase
     {
-        private readonly PaymentDetailsDBContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public PaymentController(PaymentDetailsDBContext context)
+        public PaymentController(ApplicationDbContext context)
         {
             _context = context;
         }
